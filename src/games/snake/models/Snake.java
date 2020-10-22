@@ -7,18 +7,24 @@ public class Snake {
     int length;
     int xFirstElement;
     int yFirstElement;
+    int widthFirstElement;
+    int heightFirstElement;
+    String snakeDirect;
     ArrayList<int[]> elementsPositions;
 
-    public Snake() {
+    public Snake(int xFirstElement, int yFirstElement, int widthFirstElement, int heightFirstElement) {
         this.length = 1;
-        this.xFirstElement = 0;
-        this.yFirstElement = 0;
+        this.xFirstElement = xFirstElement;
+        this.yFirstElement = yFirstElement;
+        this.widthFirstElement = widthFirstElement;
+        this.heightFirstElement = heightFirstElement;
+        this.snakeDirect = "RIGHT";
         this.elementsPositions = new ArrayList<>();
-        elementsPositions.add(createSnakeFragmentPosition(xFirstElement, yFirstElement));
+        elementsPositions.add(createSnakeFragmentPosition(xFirstElement, yFirstElement, widthFirstElement, heightFirstElement));
     }
 
-    public int[] createSnakeFragmentPosition(int x, int y){
-        return (new int[]{x, y});
+    public int[] createSnakeFragmentPosition(int x, int y, int width, int height){
+        return (new int[]{x, y, width, height});
     }
 
     public int getLength() {
@@ -31,6 +37,14 @@ public class Snake {
 
     public int getyFirstElement() {
         return yFirstElement;
+    }
+
+    public int getWidthFirstElement() {
+        return widthFirstElement;
+    }
+
+    public int getHeightFirstElement() {
+        return heightFirstElement;
     }
 
     public ArrayList<int[]> getElementsPositions() {
@@ -53,6 +67,22 @@ public class Snake {
         this.elementsPositions = elementsPositions;
     }
 
+    public void setWidthFirstElement(int widthFirstElement) {
+        this.widthFirstElement = widthFirstElement;
+    }
+
+    public void setHeightFirstElement(int heightFirstElement) {
+        this.heightFirstElement = heightFirstElement;
+    }
+
+    public String getSnakeDirect() {
+        return snakeDirect;
+    }
+
+    public void setSnakeDirect(String snakeDirect) {
+        this.snakeDirect = snakeDirect;
+    }
+
     @Override
     public String toString() {
         return "Snake{" +
@@ -62,4 +92,5 @@ public class Snake {
                 ", elementsPositions=" + elementsPositions +
                 '}';
     }
+
 }

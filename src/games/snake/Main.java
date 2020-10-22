@@ -1,10 +1,12 @@
 package games.snake;
 
+import games.snake.controllers.ControllerSnake;
 import games.snake.views.MainView;
 
 public class Main {
 
     public static void main(String[] args) {
-        new MainView();
+
+        new ControllerSnake(50);
     }
 }
