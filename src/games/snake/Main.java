@@ -7,6 +7,6 @@ public class Main {
 
     public static void main(String[] args) {
 
-        new ControllerSnake(50);
+        new ControllerSnake(80, 400);
     }
 }

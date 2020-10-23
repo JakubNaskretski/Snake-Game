@@ -10,6 +10,7 @@ public class SnakePiece {
     final int height_snake;
     final Color color;
 
+
     public SnakePiece(int x_snake, int y_snake, int width_snake, int height_snake, Color color) {
         this.x_snake = x_snake;
         this.y_snake = y_snake;

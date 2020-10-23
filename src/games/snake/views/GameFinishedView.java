@@ -1,8 +1,5 @@
 package games.snake.views;
 
-import games.snake.controllers.DrawFoodPiece;
-import games.snake.controllers.DrawSnakePiece;
-
 import javax.swing.*;
 import java.awt.*;
 
@@ -13,10 +10,14 @@ public class GameFinishedView {
 
     private JFrame frame;
     private JPanel mainPanel;
-    private JLabel finishText;
+    private JLabel finishText, scoreText;
+
+    private int playerScore;
 
 
-    public GameFinishedView() {
+    public GameFinishedView(int playerScore) {
+        this.playerScore = playerScore;
+
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 
         screenHeight = (int) screenSize.getHeight();
@@ -42,14 +43,22 @@ public class GameFinishedView {
         mainPanel = new JPanel(new GridBagLayout());
         GridBagConstraints c = new GridBagConstraints();
 
-        finishText = new JLabel("Some finish text");
+        finishText = new JLabel("Congratulations, You have received: ");
         finishText.setFont(new Font("serif", Font.BOLD, 35));
-
         c.fill = GridBagConstraints.HORIZONTAL;
-        c.gridwidth = 3;
-        c.gridx = 0;
+        c.gridwidth = 1;
+        c.gridx = 1;
         c.gridy = 0;
         mainPanel.add(finishText, c);
+
+
+        scoreText = new JLabel(String.valueOf(playerScore)+" Points");
+        scoreText.setFont(new Font("serif", Font.BOLD, 35));
+        c.fill = GridBagConstraints.HORIZONTAL;
+        c.gridwidth = 1;
+        c.gridx = 1;
+        c.gridy = 1;
+        mainPanel.add(scoreText, c);
 
 
         frame.add(mainPanel);

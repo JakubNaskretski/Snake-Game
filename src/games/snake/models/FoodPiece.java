@@ -1,5 +1,6 @@
 package games.snake.models;
 
+import java.awt.*;
 import java.util.ArrayList;
 
 public class FoodPiece {
@@ -8,6 +9,8 @@ public class FoodPiece {
     int y;
     int width;
     int height;
+    Color color;
+    Rectangle foodPiece;
     int[] foodCoordinates;
 
     public FoodPiece(int x, int y, int width, int height) {
@@ -16,6 +19,12 @@ public class FoodPiece {
         this.width = width;
         this.height = height;
         this.foodCoordinates = new int[]{x, y, width, height};
+        this.color = Color.red;
+        foodPiece = null;
+    }
+
+    public Color getColor() {
+        return color;
     }
 
     public int getX() {
@@ -38,6 +47,10 @@ public class FoodPiece {
         return foodCoordinates;
     }
 
+    public void setColor(Color color) {
+        this.color = color;
+    }
+
     public void setX(int x) {
         this.x = x;
     }
@@ -52,6 +65,14 @@ public class FoodPiece {
 
     public void setHeight(int height) {
         this.height = height;
+    }
+
+    public Rectangle getFoodPiece() {
+        return foodPiece;
+    }
+
+    public void setFoodPiece(Rectangle foodPiece) {
+        this.foodPiece = foodPiece;
     }
 
     public void setFoodCoordinates(int[] foodCoordinates) {

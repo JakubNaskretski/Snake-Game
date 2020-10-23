@@ -13,7 +13,8 @@ public class MainView {
     private JFrame frame;
     private JPanel mainPanel, gameFieldPanel;
     private DrawSnakePiece drawSnakePiece;
-    DrawFoodPiece drawFoodPiece;
+    private DrawFoodPiece drawFoodPiece;
+    private JLabel scoreCounter;
 
     private GameFieldView gameFieldView;
 
@@ -50,7 +51,6 @@ public class MainView {
         gameFieldView.setPreferredSize(new Dimension(screenWidth / 3, screenHeight / 2));
         gameFieldView.setBorder(BorderFactory.createLineBorder(Color.black));
 
-
         gameFieldPanel = new JPanel();
         LayoutManager overlay = new OverlayLayout(gameFieldPanel);
         gameFieldPanel.setLayout(overlay);
@@ -61,9 +61,22 @@ public class MainView {
         gameFieldPanel.add(drawFoodPiece);
 
         c.fill = GridBagConstraints.HORIZONTAL;
-        c.gridwidth = 3;
+        c.gridwidth = 1;
         c.gridx = 0;
         c.gridy = 0;
+        mainPanel.add(new JLabel("Your score: "), c);
+
+        scoreCounter = new JLabel("0");
+        c.fill = GridBagConstraints.HORIZONTAL;
+        c.gridwidth = 2;
+        c.gridx = 1;
+        c.gridy = 0;
+        mainPanel.add(scoreCounter, c);
+
+        c.fill = GridBagConstraints.HORIZONTAL;
+        c.gridwidth = 3;
+        c.gridx = 0;
+        c.gridy = 1;
         mainPanel.add(gameFieldPanel, c);
 
 
@@ -88,5 +101,13 @@ public class MainView {
 
     public JPanel getMainPanel() {
         return mainPanel;
+    }
+
+    public JLabel getScoreCounter() {
+        return scoreCounter;
+    }
+
+    public void setScoreCounter(JLabel scoreCounter) {
+        this.scoreCounter = scoreCounter;
     }
 }

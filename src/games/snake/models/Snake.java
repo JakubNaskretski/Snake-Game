@@ -20,11 +20,14 @@ public class Snake {
         this.heightFirstElement = heightFirstElement;
         this.snakeDirect = "RIGHT";
         this.elementsPositions = new ArrayList<>();
+//        elementsPositions.add(createSnakeFragmentPosition(new int[]{xFirstElement, yFirstElement, widthFirstElement, heightFirstElement}));
         elementsPositions.add(createSnakeFragmentPosition(xFirstElement, yFirstElement, widthFirstElement, heightFirstElement));
     }
 
     public int[] createSnakeFragmentPosition(int x, int y, int width, int height){
+//        public int[] createSnakeFragmentPosition(int[] snakeElementToAdd){
         return (new int[]{x, y, width, height});
+//        return (snakeElementToAdd);
     }
 
     public int getLength() {
