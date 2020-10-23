@@ -10,6 +10,7 @@ import java.awt.event.ActionEvent;
 import java.util.TimerTask;
 
 //TODO: FIX MVC
+//TODO: WRITE TESTS
 
 public class ControllerSnake {
 
@@ -286,6 +287,8 @@ public class ControllerSnake {
 
                     }
                     if (ifSnakesHitWall() == true || ifSnakeAteItself() == true){
+
+
                         System.out.println("GAME LOST");
                         mainView.getFrame().dispose();
                         new GameFinishedView(playerPoints);
